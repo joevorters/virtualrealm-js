@@ -98,14 +98,16 @@ setTimeout(function() {
   csrGenProc.stderr.on('data', handleCountry);
 
   function handleCountry(data) {
-    util.spliceHandler(csrGenProc.stderr, 'data', handleCountry);
     if (opts.options.debug) {
       log.write(chalk.bold(chalk.green(data.toString('utf8'))));
       log.write(' ');
-      log(chalk.bold(chalk.magenta(DEFAULTS.country)));
     }
-    csrGenProc.stderr.on('data', handleState);
-    csrGenProc.stdin.write(DEFAULTS.country + os.EOL);
+    if (/Country/i.test(data.toString('utf8'))) {
+      util.spliceHandler(csrGenProc.stderr, 'data', handleCountry);
+      log(chalk.bold(chalk.magenta(DEFAULTS.country)));
+      csrGenProc.stderr.on('data', handleState);
+      csrGenProc.stdin.write(DEFAULTS.country + os.EOL);
+    }
   }
 
   function handleState(data) {
