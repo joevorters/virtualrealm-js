@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package virtualproto;
+
+import "chat.proto";
+import "login.proto";
+import "space.proto";
+
+service Server {
+  rpc ServerBroadcast(ServerBroadcastQuery) returns(ServerBroadcastResult);
+  rpc ServerWhisper(ServerWhisperQuery) returns(ServerWhisperResult);
+  rpc ServerLogin(ServerLoginQuery) returns(ServerLoginResult);
+  rpc ServerRequestZone(ServerRequestZoneQuery) returns(ServerRequestZoneResult);
+  rpc ServerMove(ServerMoveQuery) returns(ServerMoveResult);
+  rpc ServerRotate(ServerRotateQuery) returns(ServerRotateResult);
+}
+
+service Client {
+  rpc ClientSend(ClientSendQuery) returns(ClientSendResult);
+}

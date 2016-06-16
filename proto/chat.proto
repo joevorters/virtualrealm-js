@@ -1,0 +1,37 @@
+syntax = "proto2";
+
+package virtualproto;
+
+import "status.proto";
+import "auth.proto";
+
+
+message ServerBroadcastQuery {
+  required Auth auth = 1;
+  required string msg = 2;
+}
+
+message ServerBroadcastResult {
+  required Status status = 1;
+}
+
+message ServerWhisperQuery {
+  required Auth auth = 1;
+  required string target = 2;
+  required string msg = 3;
+}
+
+message ServerWhisperResult {
+  required Status status = 1;
+}
+
+message ClientSendQuery {
+  required Auth auth = 1;
+  required bool is_whisper = 2;
+  required string from = 3;
+  required string msg = 4;
+}
+
+message ClientSendResult {
+  required Status status = 1;
+}

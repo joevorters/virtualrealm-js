@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package virtualproto;
+
+message Auth {
+  required string token = 1;
+}

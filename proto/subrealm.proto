@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package virtualproto;
+
+message Subrealm {
+  required int32 x = 1;
+  required int32 y = 2;
+  required int32 image_id = 3;
+  required string name = 4;
+}
