@@ -50,7 +50,7 @@ if (opts.options.version) {
 }
 
 if (!hasOpenssl) {
-  log(`${chalk.bold(chalk.gray(process.title)) + ':'} ${chalk.bold(chalk.gray('openssl not found in PATH'))}`);
+  log.error(`${chalk.bold(chalk.gray(process.title)) + ':'} ${chalk.bold(chalk.gray('openssl not found in PATH'))}`);
   process.exit(1);
 }
 
@@ -59,8 +59,8 @@ process.chdir(path.join(__dirname, ".."));
 try {
   var certsPathExists = pathExists.sync('certs');
 } catch (e) {
-  if (opts.options.debug) log(e.stack);
-  else log(`${chalk.bold(chalk.gray(process.title)) + ':'} ${chalk.bold(chalk.gray(e.message))}`);
+  if (opts.options.debug) log.error(e.stack);
+  else log.error(`${chalk.bold(chalk.gray(process.title)) + ':'} ${chalk.bold(chalk.gray(e.message))}`);
   process.exit(1);
 }
 
@@ -68,8 +68,8 @@ if (!certsPathExists) {
   try {
     mkdirp.sync('certs');
   } catch (e) {
-    if (opts.options.debug) log(e.stack);
-    else log(`${chalk.bold(chalk.gray(process.title)) + ':'} ${chalk.bold(chalk.gray(e.message))}`);
+    if (opts.options.debug) log.error(e.stack);
+    else log.error(`${chalk.bold(chalk.gray(process.title)) + ':'} ${chalk.bold(chalk.gray(e.message))}`);
     process.exit(1);
   }
 }
