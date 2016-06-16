@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "start": "node ./bin/server --debug"
+    "start": "node ./bin/server --debug",
+    "generate": "node ./bin/generate --debug"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,10 @@
   "dependencies": {
     "chalk": "^1.1.3",
     "lodash": "^4.13.1",
+    "mkdirp": "^0.5.1",
     "node-getopt": "^0.2.3",
-    "protobufjs": "^5.0.1"
+    "path-exists": "^3.0.0",
+    "protobufjs": "^5.0.1",
+    "which": "^1.2.10"
   }
 }
