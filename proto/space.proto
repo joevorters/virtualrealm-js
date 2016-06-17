@@ -6,6 +6,7 @@ import "status.proto";
 import "auth.proto";
 import "subrealm.proto";
 import "realmgoer.proto";
+import "transaction.proto";
 
 message ServerRequestZoneQuery {
   required Auth auth = 1;
