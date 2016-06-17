@@ -7,6 +7,7 @@ const os = require('os'),
   Getopt = require('node-getopt'),
   getopt = new Getopt([
     ['p', 'port=PORT', 'server bind port'],
+    ['w', 'http-port=PORT', 'http server port'],
     ['d', 'debug', 'enable debugging output'],
     ['h', 'help', 'display help'],
     ['v', 'version', 'display version number'],
@@ -23,16 +24,16 @@ const os = require('os'),
 
 process.title = path.basename(process.argv[1]);
 
-
 let opts = getopt.parseSystem();
 
 log.setDebugging(typeof opts.options.debug !== 'undefined');
 
 if (!opts.options.port) opts.options.port = DEFAULTS.port;
+if (!opts.options['http-port']) opts.options['http-port'] = DEFAULTS.httpPort;
 
 if (opts.options['no-color']) util.neutralizeColor();
 
-getopt.setHelp(`${chalk.yellow(chalk.bold('Usage:'))} ${chalk.yellow(chalk.bold(process.title))} ${chalk.yellow(chalk.bold('[-dvh] [-p PORT]'))}${os.EOL}${chalk.gray(chalk.bold('[[OPTIONS]]'))}`);
+getopt.setHelp(`${chalk.yellow(chalk.bold('Usage:'))} ${chalk.yellow(chalk.bold(process.title))} ${chalk.yellow(chalk.bold('[-dvh] [-p PORT] [-w PORT]'))}${os.EOL}${chalk.gray(chalk.bold('[[OPTIONS]]'))}`);
 
 if (opts.options.help) {
   getopt.showHelp();
@@ -46,7 +47,8 @@ if (opts.options.version) {
 let lastDir = process.cwd();
 
 Server({
-  listen: opts.options.port,
+  port: opts.options.port,
+  httpPort: opts.options['http-port'],
   context: (function getContextSync() {
     let certPath = path.join(__dirname, '..', 'certs');
     let hadToRegenerateCerts;
@@ -63,4 +65,4 @@ Server({
       cert: fs.readFileSync(path.join(__dirname, '..', 'certs', 'server-cert.pem'))
     }
   })()
-});
+}).listen();

@@ -6,7 +6,9 @@
   "scripts": {
     "test": "mocha",
     "start": "node ./bin/server --debug",
-    "generate": "node ./bin/generate --debug"
+    "generate": "node ./bin/generate --debug",
+    "build": "cd public; webpack; cd ..",
+    "debug-server": "node ./bin/server --http-port=8080 --debug"
   },
   "repository": {
     "type": "git",
@@ -25,14 +27,28 @@
   },
   "homepage": "https://github.com/raypulver/virtualrealm-js#readme",
   "dependencies": {
+    "body-parser": "^1.15.1",
     "chalk": "^1.1.3",
     "clone": "^1.0.2",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
     "jsonwebtoken": "^7.0.1",
     "lodash": "^4.13.1",
     "mkdirp": "^0.5.1",
     "node-getopt": "^0.2.3",
+    "node-uuid": "^1.4.7",
     "path-exists": "^3.0.0",
     "protobufjs": "^5.0.1",
-    "which": "^1.2.10"
+    "which": "^1.2.10",
+    "ws": "^1.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "webpack": "^1.13.1"
   }
 }

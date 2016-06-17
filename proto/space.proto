@@ -2,7 +2,6 @@ syntax = "proto2";
 
 package virtualproto;
 
-import "status.proto";
 import "subrealm.proto";
 import "realmgoer.proto";
 

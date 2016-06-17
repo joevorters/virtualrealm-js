@@ -1,5 +1,4 @@
 syntax = "proto2";
-import "status.proto";
 
 package virtualproto;
 

@@ -1,4 +1,5 @@
 {
   "port": 50000,
+  "httpPort": 443,
   "maxMessageSize": 65536
 }

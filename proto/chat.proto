@@ -2,8 +2,6 @@ syntax = "proto2";
 
 package virtualproto;
 
-import "status.proto";
-
 message ServerBroadcastQuery {
   required string auth = 1;
   required string msg = 2;
