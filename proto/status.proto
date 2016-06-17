@@ -1,7 +1,0 @@
-syntax = "proto2";
-
-package virtualproto;
-
-message Status {
-  required int32 error = 1;
-}

@@ -1,6 +1,5 @@
 syntax = "proto2";
 import "status.proto";
-import "transaction.proto";
 
 package virtualproto;
 
@@ -9,7 +8,6 @@ message ServerLoginQuery {
   required string password = 2;
 }
 message ServerLoginResult {
-  required Status status = 1;
-  optional string token = 2;
+  required string auth = 2;
 }
 

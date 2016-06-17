@@ -1,1 +1,9 @@
+syntax = "proto2";
 
+package virtualproto;
+
+message ResponseHeader {
+  required int32 tx = 1;
+  required int32 length = 2;
+  required int32 error = 3;
+}

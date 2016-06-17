@@ -3,34 +3,32 @@ syntax = "proto2";
 package virtualproto;
 
 import "status.proto";
-import "auth.proto";
 import "subrealm.proto";
 import "realmgoer.proto";
-import "transaction.proto";
 
 message ServerRequestZoneQuery {
-  required Auth auth = 1;
+  required string auth = 1;
 }
 
 message ServerRequestZoneResult {
-  required Status status = 1;
+  required string auth = 1;
   repeated Subrealm subrealms = 2;
   repeated Realmgoer realmgoers = 3;
 }
 
 message ServerMoveQuery {
-  required Auth auth = 1;
+  required string auth = 1;
 }
 
 message ServerMoveResult {
-  required Status status = 1;
+  required string auth = 1;
 }
 
 message ServerRotateQuery {
-  required Auth auth = 1;
+  required string auth = 1;
   required double rotation = 2;
 }
 
 message ServerRotateResult {
-  required Status status = 1;
+  required string auth = 1;
 }

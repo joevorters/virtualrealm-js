@@ -1,3 +1,4 @@
 {
-  "port": 50000
+  "port": 50000,
+  "maxMessageSize": 65536
 }
