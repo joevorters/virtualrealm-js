@@ -50,7 +50,7 @@ if (opts.options.version) {
 }
 
 if (!hasOpenssl) {
-  log.error(`${chalk.bold(chalk.gray(process.title)) + ':'} ${chalk.bold(chalk.gray('openssl not found in PATH'))}`);
+  log.error(`${chalk.bold(chalk.gray(process.title + ':'))} ${chalk.bold(chalk.gray('openssl not found in PATH'))}`);
   process.exit(1);
 }
 
