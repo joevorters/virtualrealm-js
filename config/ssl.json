@@ -3,8 +3,8 @@
   "country": "US",
   "state": "Connecticut",
   "locality": "North Stonington",
-  "organization": "Virtualrealm",
-  "unit": "Server Platform",
-  "common": "virtualrealm",
+  "organization": "virtualrealm",
+  "unit": "",
+  "common": "peacechamp.com",
   "email": "raymond.pulver_iv@uconn.edu"
 }

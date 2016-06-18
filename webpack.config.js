@@ -1,12 +1,14 @@
 "use strict";
 
 const path = require('path'),
-  webpack = require('webpack');
+  webpack = require('webpack'),
+  assetPath = path.join(__dirname, 'assets'),
+  publicPath = path.join(__dirname, 'public');
 
 module.exports = {
-  entry: './main.js',
+  entry: path.join(assetPath, 'main.js'),
   output: {
-    path: __dirname,
+    path: publicPath,
     filename: 'bundle.js'
   },
   module: {
