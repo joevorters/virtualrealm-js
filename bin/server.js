@@ -8,6 +8,7 @@ const os = require('os'),
   getopt = new Getopt([
     ['p', 'port=PORT', 'server bind port'],
     ['w', 'http-port=PORT', 'http server port'],
+    ['r', 'redirect-port=PORT', 'http upgrade server port'],
     ['d', 'debug', 'enable debugging output'],
     ['h', 'help', 'display help'],
     ['v', 'version', 'display version number'],
@@ -30,6 +31,7 @@ log.setDebugging(typeof opts.options.debug !== 'undefined');
 
 if (!opts.options.port) opts.options.port = DEFAULTS.port;
 if (!opts.options['http-port']) opts.options['http-port'] = DEFAULTS.httpPort;
+if (!opts.options['redirect-port']) opts.options['redirect-port'] = DEFAULTS.redirectPort;
 
 if (opts.options['no-color']) util.neutralizeColor();
 
@@ -49,6 +51,7 @@ let lastDir = process.cwd();
 Server({
   port: opts.options.port,
   httpPort: opts.options['http-port'],
+  redirect: opts.options['redirect-port'],
   context: (function getContextSync() {
     let certPath = path.join(__dirname, '..', 'certs');
     let hadToRegenerateCerts;
