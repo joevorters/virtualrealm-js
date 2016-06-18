@@ -1,7 +1,25 @@
+.vr-panel-body {
+  padding: 15px;
+  height: 100%;
+}
+
 .panel {
   display: block;
-  position: relative;
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px !important;
+  height: 50% !important;
+  width: 50%;
   background-color: #1d1d1d;
+}
+
+#app {
+  height: 100%;
+}
+
+.app-container {
+  height: 100%;
 }
 
 .navbar {
@@ -11,5 +29,12 @@
 }
 
 body {
-  font-family: "Lucida Console", Monaco, monospace;
+  height: 90%;
+  width: 90%;
+}
+
+html {
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
