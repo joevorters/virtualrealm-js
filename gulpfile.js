@@ -5,6 +5,9 @@ const gulp = require('gulp'),
   gutil = require('gulp-util'),
   url = require('url'),
   webpack = require('webpack'),
+  copy = require('gulp-copy'),
+  cleanCSS = require('gulp-clean-css'),
+  rename = require('gulp-rename'),
   pathExists = require('path-exists'),
   WebpackDevServer = require('webpack-dev-server'),
   Getopt = require('node-getopt'),
@@ -35,7 +38,7 @@ if (opts.argv[0] === 'help') {
   process.exit(0);
 }
 
-gulp.task("webpack", function(next) {
+gulp.task("webpack", ['patch-bootstrap'], function(next) {
   webpack(config, function(err, stats) {
     if (err) throw new gutil.PluginError("webpack", err);
     gutil.log("[webpack]", stats.toString({
@@ -45,7 +48,17 @@ gulp.task("webpack", function(next) {
   });
 });
 
-gulp.task("webpack-dev-server", function(next) {
+gulp.task('patch-bootstrap', function () {
+  let dest = path.join(__dirname, 'node_modules', 'bootstrap', 'dist', 'css');
+  gulp.src(path.join(__dirname, 'assets', 'styles', 'bootstrap.css'))
+    .pipe(copy(path.join(dest), { prefix: 2 }))
+    .pipe(cleanCSS({ compatibility: 'ie8' }))
+    .pipe(rename("bootstrap.min.css"))
+    .pipe(gulp.dest(dest));
+});
+  
+
+gulp.task("webpack-dev-server", ['patch-bootstrap'], function(next) {
   const compiler = webpack(config);
   let devConf;
   if (pathExists.sync(devConfPath)) {
@@ -58,7 +71,8 @@ gulp.task("webpack-dev-server", function(next) {
   new WebpackDevServer(compiler, {
     quiet: false,
     stats: {
-      colors: true
+      colors: true,
+      chunkModules: false
     }
   }).listen(devConf.port, devConf.bindAddr, function(err) {
     if (err) throw new gutil.PluginError("webpack-dev-server", err);
