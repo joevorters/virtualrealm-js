@@ -1,0 +1,15 @@
+.panel {
+  display: block;
+  position: relative;
+  background-color: #1d1d1d;
+}
+
+.navbar {
+  display: block;
+  padding: 5px;
+  color: cyan;
+}
+
+body {
+  font-family: "Lucida Console", Monaco, monospace;
+}
