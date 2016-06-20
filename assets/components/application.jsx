@@ -5,7 +5,7 @@ import NavBar from './navbar.jsx';
 export default class Application extends React.Component {
   render() {
     return (
-      <div className="panel panel-primary app-container">
+      <div className="application">
         <NavBar />
         <Console />
       </div>

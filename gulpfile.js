@@ -25,6 +25,10 @@ let opts = getopt.parseSystem();
 
 const fmt = "%-25s %-20s";
 
+const assetPath = path.join(__dirname, 'assets');
+
+const assets = [path.join(assetPath, '*'), path.join(assetPath, '**', '*')];
+
 function formatTask(name, desc) {
   return sprintf(fmt, name, desc);
 }
@@ -38,27 +42,18 @@ if (opts.argv[0] === 'help') {
   process.exit(0);
 }
 
-gulp.task("webpack", ['patch-bootstrap'], function(next) {
+gulp.task("webpack", function(next) {
   webpack(config, function(err, stats) {
     if (err) throw new gutil.PluginError("webpack", err);
     gutil.log("[webpack]", stats.toString({
-      colors: true
+      colors: true,
+      chunkModules: false
     }));
     next();
   });
 });
 
-gulp.task('patch-bootstrap', function () {
-  let dest = path.join(__dirname, 'node_modules', 'bootstrap', 'dist', 'css');
-  gulp.src(path.join(__dirname, 'assets', 'styles', 'bootstrap.css'))
-    .pipe(copy(path.join(dest), { prefix: 2 }))
-    .pipe(cleanCSS({ compatibility: 'ie8' }))
-    .pipe(rename("bootstrap.min.css"))
-    .pipe(gulp.dest(dest));
-});
-  
-
-gulp.task("webpack-dev-server", ['patch-bootstrap'], function(next) {
+gulp.task("webpack-dev-server", function(next) {
   const compiler = webpack(config);
   let devConf;
   if (pathExists.sync(devConfPath)) {
@@ -86,6 +81,10 @@ gulp.task("webpack-dev-server", ['patch-bootstrap'], function(next) {
 });
 
 gulp.task('default', ['webpack']);
+
+gulp.task('watch', function () {
+  return gulp.watch(assets, ['webpack']);
+});
 
 if (opts.argv.length && !gulp.tasks[opts.argv[0]]) {
   require('./lib/log').error(`task ${chalk.magenta(opts.argv[0])} not found`);

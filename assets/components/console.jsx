@@ -1,13 +1,15 @@
 import React from 'react';
 
-export default class OutputPane extends React.Component {
+export default class Console extends React.Component {
   render() {
     return (
-      <div className="panel-body">
-        <div>
+      <div className="console">
+        <div className="output">
           Data
         </div>
-        <input type="text" class="form-control" />
+        <div className="input">
+          <input type="text" />
+        </div>
       </div>
     );
   }
