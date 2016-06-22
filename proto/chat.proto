@@ -22,12 +22,9 @@ message ServerWhisperResult {
 }
 
 message ClientSendQuery {
-  required string auth = 1;
-  required bool is_whisper = 2;
-  required string from = 3;
-  required string msg = 4;
+  required bool is_whisper = 1;
+  required string from = 2;
+  required string msg = 3;
 }
 
-message ClientSendResult {
-  required string auth = 1;
-}
+message ClientSendResult {}
