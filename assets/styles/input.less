@@ -1,0 +1,103 @@
+@import (reference) "mixins";
+@import (reference) "variables";
+@import (reference) "elements";
+
+.input {
+  display: block;
+  .desktop({
+    .vfill(@input-block-height - 2*@input-border-width);
+    padding: @input-padding;
+    .border-radius(0px, 5px, 5px, 0px);
+    .hfill(calc(~'100% - @{input-border-width}*2 - 2*@{input-padding}'));
+    border: @input-border-width solid @input-border-color;
+  });
+  .mobile({
+    padding: @mobile-input-padding;
+    .vfill(@mobile-input-block-height - 2*@mobile-input-border-width);
+    .hfill(calc(~'100% - @{mobile-input-border-width}*2 - 2*@{mobile-input-padding}'));
+    border: @mobile-input-border-width solid @input-border-color;
+  });
+  .action-container {
+    display: table;
+    .hfill();
+    .action {
+      display: table-row-group;
+      text-align: center;
+      vertical-align: middle;
+      .mobile({
+        height: @mobile-action-icon-size;
+        i {
+          display: table-cell;
+          font-size: @mobile-action-icon-size;
+          height: @mobile-action-icon-size;
+        }
+      });
+      .desktop({
+        height: @action-icon-size;
+        i {
+          display: table-cell;
+          font-size: @action-icon-size;
+          height: @action-icon-size;
+        }
+      });
+    }
+  }
+  .input-container {
+    &:extend(.input .action-container);
+    .form-input {
+      display: table-row-group;
+      .mobile({
+        .vfill(@input-height*@action-bar-mobile-multiplier);
+      });
+      .desktop({
+        .vfill(@input-height);
+        .border-radius(0px, 5px, 5px, 0px);
+      });
+      input {
+        display: table-cell;
+        .center();
+        border: none;
+        padding: 0px;
+        .desktop({
+          font-size: 1.2em;
+        });
+        .vfill();
+        .hfill();
+        .mobile({
+          font-size: 2em;
+        });
+        background-color: @input-color;
+        color: white;
+        .transition-duration(0.2s);
+        &:focus, &:focus:hover {
+          background-color: lighten(@input-color, 20%);
+        }
+        &:hover {
+          background-color: lighten(@input-color, 5%);
+        }
+      }
+      i {
+        padding: @send-padding;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        background-color: @nav-color;
+        &:hover {
+          background-color: lighten(@border-color, 20%);
+        }
+        .center();
+        .vfill();
+        .desktop({
+          padding: @send-padding;
+          font-size: @input-height - @send-padding*2;
+          width: @input-height;
+        });
+        .mobile({
+          padding: @send-padding*@action-bar-mobile-multiplier;
+          width: @input-height*@action-bar-mobile-multiplier;
+          font-size: @input-height*@action-bar-mobile-multiplier - @send-padding*@action-bar-mobile-multiplier*2;
+        });
+      }
+    }
+  }
+}

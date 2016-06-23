@@ -40,6 +40,7 @@
     "node-uuid": "^1.4.7",
     "path-exists": "^3.0.0",
     "protobufjs": "^5.0.1",
+    "react-icons": "^2.1.0",
     "sprintf": "^0.1.5",
     "which": "^1.2.10",
     "ws": "^1.1.0"
@@ -62,6 +63,7 @@
     "proto-loader": "^0.2.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
+    "react-iconpack": "^1.1.4",
     "react-redux": "^4.4.5",
     "react-router": "^2.4.1",
     "redux": "^3.5.2",

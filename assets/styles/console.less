@@ -1,0 +1,17 @@
+@import (reference) "mixins";
+@import (reference) "variables";
+
+.console {
+  margin: 0px;
+  .desktop({
+    .vfill(calc(~'100% - @{nav-block-height} - @{console-padding}*2 - @{input-block-height}'));
+    padding: @console-padding;
+    border: @console-border-width solid @border-color;
+  });
+  .mobile({
+    border: @mobile-console-border-width solid @border-color;
+    .vfill(calc(~'100% - @{mobile-nav-block-height} - @{mobile-console-padding}*2 - @{mobile-input-block-height}'));
+    padding: @mobile-console-padding;
+    font-size: 1.8em;
+  });
+}

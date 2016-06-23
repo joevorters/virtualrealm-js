@@ -1,0 +1,32 @@
+@import (reference) "variables";
+@import (reference) "elements";
+@import (reference) "mixins";
+
+body {
+  background-color: @backdrop-color;
+}
+
+.application {
+  font-family: arial;
+  background-color: darken(@application-color, 8%);
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle;
+  color: white;
+  .desktop({
+    position: relative;
+    top: 35%;
+    .transform(translateY(-35%));
+    font-size: 1em;
+    .fill(@desktop-dim);
+    .border-radius(5px, 5px, 5px, 5px);
+  });
+  .mobile({
+    font-size: 2em;
+    .fill(@mobile-dim);
+  });
+}
+
+#app {
+  .vfill();
+}

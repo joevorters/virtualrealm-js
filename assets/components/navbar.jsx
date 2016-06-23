@@ -4,7 +4,10 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <div className="nav">
-        Virtualrealm
+        <span className="title">Virtualrealm</span>
+        <span className="nav-actions">
+          <i className="material-icons">person</i>
+        </span>
       </div>
     )
   }
