@@ -1,6 +1,6 @@
 {
   "port": 50000,
-  "httpPort": 443,
-  "redirectPort": 80,
+  "httpsPort": 443,
+  "httpPort": 80,
   "maxMessageSize": 65536
 }

@@ -20521,17 +20521,50 @@
 	        "div",
 	        { className: "nav" },
 	        _react2.default.createElement(
-	          "span",
+	          "div",
+	          { className: "nav-actions" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "nav-action-table" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "nav-action-row" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "nav-action" },
+	                _react2.default.createElement(
+	                  "i",
+	                  { className: "material-icons" },
+	                  "menu"
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "div",
 	          { className: "title" },
 	          "Virtualrealm"
 	        ),
 	        _react2.default.createElement(
-	          "span",
+	          "div",
 	          { className: "nav-actions" },
 	          _react2.default.createElement(
-	            "i",
-	            { className: "material-icons" },
-	            "person"
+	            "div",
+	            { className: "nav-action-table" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "nav-action-row" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "nav-action" },
+	                _react2.default.createElement(
+	                  "i",
+	                  { className: "material-icons" },
+	                  "person"
+	                )
+	              )
+	            )
 	          )
 	        )
 	      );
@@ -20590,9 +20623,13 @@
 	            { className: "form-input" },
 	            _react2.default.createElement("input", { type: "text" }),
 	            _react2.default.createElement(
-	              "i",
-	              { className: "material-icons" },
-	              "send"
+	              "div",
+	              { className: "send-action" },
+	              _react2.default.createElement(
+	                "i",
+	                { className: "material-icons" },
+	                "send"
+	              )
 	            )
 	          )
 	        ),
@@ -20601,26 +20638,42 @@
 	          { className: "action-container" },
 	          _react2.default.createElement(
 	            "div",
-	            { className: "action" },
+	            { className: "action-row" },
 	            _react2.default.createElement(
-	              "i",
-	              { className: "material-icons" },
-	              "visibility"
+	              "div",
+	              { className: "action" },
+	              _react2.default.createElement(
+	                "i",
+	                { className: "material-icons" },
+	                "visibility"
+	              )
 	            ),
 	            _react2.default.createElement(
-	              "i",
-	              { className: "material-icons" },
-	              "grade"
+	              "div",
+	              { className: "action" },
+	              _react2.default.createElement(
+	                "i",
+	                { className: "material-icons" },
+	                "grade"
+	              )
 	            ),
 	            _react2.default.createElement(
-	              "i",
-	              { className: "material-icons" },
-	              "explore"
+	              "div",
+	              { className: "action" },
+	              _react2.default.createElement(
+	                "i",
+	                { className: "material-icons" },
+	                "explore"
+	              )
 	            ),
 	            _react2.default.createElement(
-	              "i",
-	              { className: "material-icons" },
-	              "event"
+	              "div",
+	              { className: "action" },
+	              _react2.default.createElement(
+	                "i",
+	                { className: "material-icons" },
+	                "event"
+	              )
 	            )
 	          )
 	        )
@@ -20668,7 +20721,7 @@
 
 
 	// module
-	exports.push([module.id, "html,\nbody {\n  padding: 0;\n  height: 100%;\n  width: 100%;\n  overflow: hidden;\n}\nbody {\n  background-color: #1a1a1a;\n}\n.application {\n  font-family: arial;\n  background-color: #3c5360;\n  margin-left: auto;\n  margin-right: auto;\n  vertical-align: middle;\n  color: white;\n}\n@media only screen and (min-device-width: 481px) {\n  .application {\n    position: relative;\n    top: 35%;\n    -webkit-transform: translateY(-35%);\n    -moz-transform: translateY(-35%);\n    -o-transform: translateY(-35%);\n    -ms-transform: translateY(-35%);\n    transform: translateY(-35%);\n    font-size: 1em;\n    width: 85%;\n    height: 85%;\n    -webkit-border-top-right-radius: 5px;\n    -webkit-border-bottom-right-radius: 5px;\n    -webkit-border-bottom-left-radius: 5px;\n    -webkit-border-top-left-radius: 5px;\n    -moz-border-radius-topright: 5px;\n    -moz-border-radius-bottomright: 5px;\n    -moz-border-radius-bottomleft: 5px;\n    -moz-border-radius-topleft: 5px;\n    border-top-right-radius: 5px;\n    border-bottom-right-radius: 5px;\n    border-bottom-left-radius: 5px;\n    border-top-left-radius: 5px;\n    -moz-background-clip: padding-box;\n    -webkit-background-clip: padding-box;\n    background-clip: padding-box;\n  }\n}\n@media only screen and (max-device-width: 480px) {\n  .application {\n    font-size: 2em;\n    width: 100%;\n    height: 100%;\n  }\n}\n#app {\n  height: 100%;\n}\n.nav {\n  display: table;\n  width: calc(100% - 5px*2);\n  background-color: #1e262a;\n  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.32);\n  -moz-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.32);\n  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.32);\n  border-bottom: none;\n  vertical-align: middle;\n}\n@media only screen and (min-device-width: 481px) {\n  .nav {\n    -webkit-border-top-right-radius: 5px;\n    -webkit-border-bottom-right-radius: 0px;\n    -webkit-border-bottom-left-radius: 0px;\n    -webkit-border-top-left-radius: 5px;\n    -moz-border-radius-topright: 5px;\n    -moz-border-radius-bottomright: 0px;\n    -moz-border-radius-bottomleft: 0px;\n    -moz-border-radius-topleft: 5px;\n    border-top-right-radius: 5px;\n    border-bottom-right-radius: 0px;\n    border-bottom-left-radius: 0px;\n    border-top-left-radius: 5px;\n    -moz-background-clip: padding-box;\n    -webkit-background-clip: padding-box;\n    background-clip: padding-box;\n    font-size: 2em;\n    width: calc(100% - 5px*2);\n    border: 0px solid #1d3635;\n    padding: 5px;\n    height: 50px;\n  }\n}\n@media only screen and (max-device-width: 480px) {\n  .nav {\n    font-size: 3em;\n    width: calc(100% - 5px*5*2);\n    border: 0px solid #1d3635;\n    padding: 25px;\n    height: 150px;\n  }\n}\n.nav .title {\n  display: table-cell;\n  vertical-align: middle;\n}\n@media only screen and (min-device-width: 481px) {\n  .nav .title {\n    width: calc(100% - 30px);\n  }\n}\n@media only screen and (max-device-width: 480px) {\n  .nav .title {\n    width: calc(100% - 150px);\n  }\n}\n.nav .nav-actions {\n  display: table-cell;\n  vertical-align: middle;\n  text-align: center;\n}\n@media only screen and (min-device-width: 481px) {\n  .nav .nav-actions {\n    width: 30px;\n  }\n}\n@media only screen and (max-device-width: 480px) {\n  .nav .nav-actions {\n    width: 150px;\n  }\n}\n.nav .nav-actions i {\n  vertical-align: middle;\n  text-align: center;\n}\n@media only screen and (max-device-width: 480px) {\n  .nav .nav-actions i {\n    height: 150px;\n    font-size: 150px;\n  }\n}\n@media only screen and (min-device-width: 481px) {\n  .nav .nav-actions i {\n    height: 30px;\n    font-size: 30px;\n  }\n}\n.console {\n  margin: 0px;\n}\n@media only screen and (min-device-width: 481px) {\n  .console {\n    height: calc(100% - 60px - 5px*2 - 75px);\n    padding: 5px;\n    border: 0px solid #1d3635;\n  }\n}\n@media only screen and (max-device-width: 480px) {\n  .console {\n    border: 0px solid #1d3635;\n    height: calc(100% - 200px - 25px*2 - 305px);\n    padding: 25px;\n    font-size: 1.8em;\n  }\n}\n.input {\n  display: block;\n}\n@media only screen and (min-device-width: 481px) {\n  .input {\n    height: 65px;\n    padding: 0px;\n    -webkit-border-top-right-radius: 0px;\n    -webkit-border-bottom-right-radius: 5px;\n    -webkit-border-bottom-left-radius: 5px;\n    -webkit-border-top-left-radius: 0px;\n    -moz-border-radius-topright: 0px;\n    -moz-border-radius-bottomright: 5px;\n    -moz-border-radius-bottomleft: 5px;\n    -moz-border-radius-topleft: 0px;\n    border-top-right-radius: 0px;\n    border-bottom-right-radius: 5px;\n    border-bottom-left-radius: 5px;\n    border-top-left-radius: 0px;\n    -moz-background-clip: padding-box;\n    -webkit-background-clip: padding-box;\n    background-clip: padding-box;\n    width: calc(100% - 5px*2 - 2*0px);\n    border: 5px solid #333333;\n  }\n}\n@media only screen and (max-device-width: 480px) {\n  .input {\n    padding: 0px;\n    height: 275px;\n    width: calc(100% - 15px*2 - 2*0px);\n    border: 15px solid #333333;\n  }\n}\n.input .action-container,\n.input .input-container {\n  display: table;\n  width: 100%;\n}\n.input .action-container .action {\n  display: table-row-group;\n  text-align: center;\n  vertical-align: middle;\n}\n@media only screen and (max-device-width: 480px) {\n  .input .action-container .action {\n    height: 170px;\n  }\n  .input .action-container .action i {\n    display: table-cell;\n    font-size: 170px;\n    height: 170px;\n  }\n}\n@media only screen and (min-device-width: 481px) {\n  .input .action-container .action {\n    height: 30px;\n  }\n  .input .action-container .action i {\n    display: table-cell;\n    font-size: 30px;\n    height: 30px;\n  }\n}\n.input .input-container .form-input {\n  display: table-row-group;\n}\n@media only screen and (max-device-width: 480px) {\n  .input .input-container .form-input {\n    height: 105px;\n  }\n}\n@media only screen and (min-device-width: 481px) {\n  .input .input-container .form-input {\n    height: 35px;\n    -webkit-border-top-right-radius: 0px;\n    -webkit-border-bottom-right-radius: 5px;\n    -webkit-border-bottom-left-radius: 5px;\n    -webkit-border-top-left-radius: 0px;\n    -moz-border-radius-topright: 0px;\n    -moz-border-radius-bottomright: 5px;\n    -moz-border-radius-bottomleft: 5px;\n    -moz-border-radius-topleft: 0px;\n    border-top-right-radius: 0px;\n    border-bottom-right-radius: 5px;\n    border-bottom-left-radius: 5px;\n    border-top-left-radius: 0px;\n    -moz-background-clip: padding-box;\n    -webkit-background-clip: padding-box;\n    background-clip: padding-box;\n  }\n}\n.input .input-container .form-input input {\n  display: table-cell;\n  margin-left: auto;\n  margin-right: auto;\n  border: none;\n  padding: 0px;\n  height: 100%;\n  width: 100%;\n  background-color: #1a1a1a;\n  color: white;\n  -moz-transition-duration: 0.2s;\n  -webkit-transition-duration: 0.2s;\n  -o-transition-duration: 0.2s;\n  transition-duration: 0.2s;\n}\n@media only screen and (min-device-width: 481px) {\n  .input .input-container .form-input input {\n    font-size: 1.2em;\n  }\n}\n@media only screen and (max-device-width: 480px) {\n  .input .input-container .form-input input {\n    font-size: 2em;\n  }\n}\n.input .input-container .form-input input:focus,\n.input .input-container .form-input input:focus:hover {\n  background-color: #4d4d4d;\n}\n.input .input-container .form-input input:hover {\n  background-color: #262626;\n}\n.input .input-container .form-input i {\n  padding: 5px;\n  display: table-cell;\n  vertical-align: middle;\n  text-align: center;\n  background-color: #1e262a;\n  margin-left: auto;\n  margin-right: auto;\n  height: 100%;\n}\n.input .input-container .form-input i:hover {\n  background-color: #417876;\n}\n@media only screen and (min-device-width: 481px) {\n  .input .input-container .form-input i {\n    padding: 5px;\n    font-size: 25px;\n    width: 35px;\n  }\n}\n@media only screen and (max-device-width: 480px) {\n  .input .input-container .form-input i {\n    padding: 15px;\n    width: 105px;\n    font-size: 75px;\n  }\n}\n", ""]);
+	exports.push([module.id, "html,\nbody {\n  padding: 0;\n  height: 100%;\n  width: 100%;\n  overflow: hidden;\n}\nbody {\n  margin: 0 !important;\n}\nbody {\n  background-color: #1a1a1a;\n}\n.application {\n  font-family: arial;\n  background-color: #3c5360;\n  margin-left: auto;\n  margin-right: auto;\n  vertical-align: middle;\n  color: white;\n}\n@media only screen and (min-device-width: 481px) {\n  .application {\n    position: relative;\n    top: 35%;\n    -webkit-transform: translateY(-35%);\n    -moz-transform: translateY(-35%);\n    -o-transform: translateY(-35%);\n    -ms-transform: translateY(-35%);\n    transform: translateY(-35%);\n    font-size: 1em;\n    width: 85%;\n    height: 85%;\n    -webkit-border-top-right-radius: 5px;\n    -webkit-border-bottom-right-radius: 5px;\n    -webkit-border-bottom-left-radius: 5px;\n    -webkit-border-top-left-radius: 5px;\n    -moz-border-radius-topright: 5px;\n    -moz-border-radius-bottomright: 5px;\n    -moz-border-radius-bottomleft: 5px;\n    -moz-border-radius-topleft: 5px;\n    border-top-right-radius: 5px;\n    border-bottom-right-radius: 5px;\n    border-bottom-left-radius: 5px;\n    border-top-left-radius: 5px;\n    -moz-background-clip: padding-box;\n    -webkit-background-clip: padding-box;\n    background-clip: padding-box;\n  }\n}\n@media only screen and (max-device-width: 480px) {\n  .application {\n    font-size: 2em;\n    width: 100%;\n    height: 100%;\n  }\n}\n#app {\n  height: 100%;\n}\n.nav {\n  display: table;\n  width: calc(100% - 0px*2);\n  background-color: #1e262a;\n  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.32);\n  -moz-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.32);\n  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.32);\n  border-bottom: none;\n  vertical-align: middle;\n}\n@media only screen and (min-device-width: 481px) {\n  .nav {\n    -webkit-border-top-right-radius: 5px;\n    -webkit-border-bottom-right-radius: 0px;\n    -webkit-border-bottom-left-radius: 0px;\n    -webkit-border-top-left-radius: 5px;\n    -moz-border-radius-topright: 5px;\n    -moz-border-radius-bottomright: 0px;\n    -moz-border-radius-bottomleft: 0px;\n    -moz-border-radius-topleft: 5px;\n    border-top-right-radius: 5px;\n    border-bottom-right-radius: 0px;\n    border-bottom-left-radius: 0px;\n    border-top-left-radius: 5px;\n    -moz-background-clip: padding-box;\n    -webkit-background-clip: padding-box;\n    background-clip: padding-box;\n    font-size: 2em;\n    width: calc(100% - 0px*2);\n    border: 0px solid #1d3635;\n    padding: 0px;\n    height: 60px;\n  }\n}\n@media only screen and (max-device-width: 480px) {\n  .nav {\n    font-size: 3em;\n    width: calc(100% - 0px*5*2);\n    border: 0px solid #1d3635;\n    padding: 0px;\n    height: 180px;\n  }\n}\n.nav .title {\n  display: table-cell;\n  padding-left: 15px;\n  padding-right: 15px;\n  vertical-align: middle;\n}\n@media only screen and (min-device-width: 481px) {\n  .nav .title {\n    width: calc(100% - 2*60px + 4*1px);\n  }\n}\n@media only screen and (max-device-width: 480px) {\n  .nav .title {\n    width: calc(100% - 2*180px + 4*2px);\n  }\n}\n.nav .nav-actions {\n  display: table-cell;\n  vertical-align: middle;\n  text-align: center;\n}\n@media only screen and (min-device-width: 481px) {\n  .nav .nav-actions {\n    border-right: 1px solid #121212;\n    border-left: 1px solid #121212;\n    width: 58px;\n  }\n}\n@media only screen and (max-device-width: 480px) {\n  .nav .nav-actions {\n    border-left: 2px solid #121212;\n    border-right: 2px solid #121212;\n    width: 176px;\n  }\n}\n.nav .nav-actions .nav-action-table {\n  display: table;\n  height: 100%;\n  width: 100%;\n}\n.nav .nav-actions .nav-action-table .nav-action-row {\n  display: table-row-group;\n}\n.nav .nav-actions .nav-action-table .nav-action-row .nav-action {\n  display: table-cell;\n  height: 100%;\n  vertical-align: middle;\n  -moz-transition-duration: 0.2s;\n  -webkit-transition-duration: 0.2s;\n  -o-transition-duration: 0.2s;\n  transition-duration: 0.2s;\n}\n@media only screen and (min-device-width: 481px) {\n  .nav .nav-actions .nav-action-table .nav-action-row .nav-action {\n    padding-left: 10px;\n    padding-right: 10px;\n    width: 24px;\n  }\n}\n@media only screen and (max-device-width: 480px) {\n  .nav .nav-actions .nav-action-table .nav-action-row .nav-action {\n    width: 120px;\n    padding-left: 10px;\n    padding-right: 10px;\n  }\n}\n.nav .nav-actions .nav-action-table .nav-action-row .nav-action:hover {\n  background-color: #ffffff;\n  color: black;\n}\n.nav .nav-actions .nav-action-table .nav-action-row .nav-action i {\n  vertical-align: middle;\n  text-align: center;\n}\n@media only screen and (max-device-width: 480px) {\n  .nav .nav-actions .nav-action-table .nav-action-row .nav-action i {\n    height: 120px;\n    font-size: 120px;\n  }\n}\n@media only screen and (min-device-width: 481px) {\n  .nav .nav-actions .nav-action-table .nav-action-row .nav-action i {\n    height: 24px;\n    font-size: 24px;\n  }\n}\n.console {\n  margin: 0px;\n}\n@media only screen and (min-device-width: 481px) {\n  .console {\n    height: calc(100% - 60px - 0px*2 - 75px);\n    padding: 0px;\n    border: 0px solid #1d3635;\n  }\n}\n@media only screen and (max-device-width: 480px) {\n  .console {\n    border: 0px solid #1d3635;\n    height: calc(100% - 180px - 0px*2 - 305px);\n    padding: 0px;\n    font-size: 1.8em;\n  }\n}\n.input {\n  display: block;\n}\n@media only screen and (min-device-width: 481px) {\n  .input {\n    height: 69px;\n    padding: 0px;\n    -webkit-border-top-right-radius: 0px;\n    -webkit-border-bottom-right-radius: 5px;\n    -webkit-border-bottom-left-radius: 5px;\n    -webkit-border-top-left-radius: 0px;\n    -moz-border-radius-topright: 0px;\n    -moz-border-radius-bottomright: 5px;\n    -moz-border-radius-bottomleft: 5px;\n    -moz-border-radius-topleft: 0px;\n    border-top-right-radius: 0px;\n    border-bottom-right-radius: 5px;\n    border-bottom-left-radius: 5px;\n    border-top-left-radius: 0px;\n    -moz-background-clip: padding-box;\n    -webkit-background-clip: padding-box;\n    background-clip: padding-box;\n    width: calc(100% - 1px*2 - 2*0px);\n    border-top: 3px solid #121212;\n    border-bottom: 3px solid #121212;\n    border-left: 1px solid #121212;\n    border-right: 1px solid #121212;\n  }\n}\n@media only screen and (max-device-width: 480px) {\n  .input {\n    padding: 0px;\n    height: 287px;\n    width: calc(100% - 5px*2 - 2*0px);\n    border-top: 9px solid #121212;\n    border-bottom: 9px solid #121212;\n    border-left: 5px solid #121212;\n    border-right: 5px solid #121212;\n  }\n}\n.input .action-container,\n.input .input-container {\n  display: table;\n  width: 100%;\n}\n.input .action-container .action-row {\n  display: table-row-group;\n  text-align: center;\n  vertical-align: middle;\n}\n@media only screen and (max-device-width: 480px) {\n  .input .action-container .action-row {\n    height: 173px;\n    border-top: 9px solid #121212;\n  }\n}\n@media only screen and (min-device-width: 481px) {\n  .input .action-container .action-row {\n    border-top: 3px solid #121212;\n    height: 31px;\n  }\n}\n.input .action-container .action-row .action {\n  display: table-cell;\n  -moz-transition-duration: 0.2s;\n  -webkit-transition-duration: 0.2s;\n  -o-transition-duration: 0.2s;\n  transition-duration: 0.2s;\n}\n.input .action-container .action-row .action:hover {\n  background-color: #ffffff;\n  color: black;\n}\n.input .action-container .action-row .action i {\n  text-align: center;\n}\n@media only screen and (max-device-width: 480px) {\n  .input .action-container .action-row .action i {\n    padding: 25px;\n    font-size: 132px;\n  }\n}\n@media only screen and (min-device-width: 481px) {\n  .input .action-container .action-row .action i {\n    padding: 5px;\n    font-size: 24px;\n  }\n}\n.input .input-container .form-input {\n  display: table-row-group;\n}\n@media only screen and (max-device-width: 480px) {\n  .input .input-container .form-input {\n    height: 105px;\n  }\n}\n@media only screen and (min-device-width: 481px) {\n  .input .input-container .form-input {\n    height: 35px;\n    -webkit-border-top-right-radius: 0px;\n    -webkit-border-bottom-right-radius: 5px;\n    -webkit-border-bottom-left-radius: 5px;\n    -webkit-border-top-left-radius: 0px;\n    -moz-border-radius-topright: 0px;\n    -moz-border-radius-bottomright: 5px;\n    -moz-border-radius-bottomleft: 5px;\n    -moz-border-radius-topleft: 0px;\n    border-top-right-radius: 0px;\n    border-bottom-right-radius: 5px;\n    border-bottom-left-radius: 5px;\n    border-top-left-radius: 0px;\n    -moz-background-clip: padding-box;\n    -webkit-background-clip: padding-box;\n    background-clip: padding-box;\n  }\n}\n.input .input-container .form-input input {\n  display: table-cell;\n  margin-left: auto;\n  margin-right: auto;\n  border: none;\n  padding: 0px;\n  height: 100%;\n  width: 100%;\n  background-color: #1a1a1a;\n  color: white;\n  -moz-transition-duration: 0.2s;\n  -webkit-transition-duration: 0.2s;\n  -o-transition-duration: 0.2s;\n  transition-duration: 0.2s;\n}\n@media only screen and (min-device-width: 481px) {\n  .input .input-container .form-input input {\n    font-size: 1.2em;\n  }\n}\n@media only screen and (max-device-width: 480px) {\n  .input .input-container .form-input input {\n    font-size: 2em;\n  }\n}\n.input .input-container .form-input input:focus,\n.input .input-container .form-input input:focus:hover {\n  background-color: #4d4d4d;\n}\n.input .input-container .form-input input:hover {\n  background-color: #262626;\n}\n.input .input-container .form-input .send-action {\n  display: table-cell;\n  vertical-align: middle;\n  text-align: center;\n  -moz-transition-duration: 0.2s;\n  -webkit-transition-duration: 0.2s;\n  -o-transition-duration: 0.2s;\n  transition-duration: 0.2s;\n  background-color: #1e262a;\n}\n@media only screen and (min-device-width: 481px) {\n  .input .input-container .form-input .send-action {\n    width: 35px;\n  }\n}\n@media only screen and (max-device-width: 480px) {\n  .input .input-container .form-input .send-action {\n    width: 105px;\n  }\n}\n.input .input-container .form-input .send-action:hover {\n  background-color: #ffffff;\n  color: black;\n}\n.input .input-container .form-input .send-action i {\n  padding: 0px;\n  vertical-align: middle;\n  text-align: center;\n  margin-left: auto;\n  margin-right: auto;\n  height: 100%;\n}\n@media only screen and (min-device-width: 481px) {\n  .input .input-container .form-input .send-action i {\n    padding: 0px;\n    font-size: 35px;\n    width: 35px;\n  }\n}\n@media only screen and (max-device-width: 480px) {\n  .input .input-container .form-input .send-action i {\n    padding: 0px;\n    width: 105px;\n    font-size: 105px;\n  }\n}\n", ""]);
 
 	// exports
 

@@ -12,7 +12,8 @@ const os = require('os'),
     ['d', 'debug', 'enable debugging output'],
     ['h', 'help', 'display help'],
     ['v', 'version', 'display version number'],
-    ['n', 'no-color', 'disable color in output']
+    ['n', 'no-color', 'disable color in output'],
+    ['s', 'secure', 'use SSL']
   ]),
   chalk = require('chalk'),
   log = require('../lib/log'),
@@ -30,12 +31,15 @@ let opts = getopt.parseSystem();
 log.setDebugging(typeof opts.options.debug !== 'undefined');
 
 if (!opts.options.port) opts.options.port = DEFAULTS.port;
-if (!opts.options['http-port']) opts.options['http-port'] = DEFAULTS.httpPort;
+if (!opts.options['http-port']) {
+  if (opts.options.secure) opts.options['http-port'] = DEFAULTS.httpsPort;
+  else opts.options['http-port'] = DEFAULTS.httpPort;
+}
 if (!opts.options['redirect-port']) opts.options['redirect-port'] = DEFAULTS.redirectPort;
 
 if (opts.options['no-color']) util.neutralizeColor();
 
-getopt.setHelp(`${chalk.yellow(chalk.bold('Usage:'))} ${chalk.yellow(chalk.bold(process.title))} ${chalk.yellow(chalk.bold('[-dvh] [-p PORT] [-w PORT]'))}${os.EOL}${chalk.gray(chalk.bold('[[OPTIONS]]'))}`);
+getopt.setHelp(`${chalk.yellow(chalk.bold('Usage:'))} ${chalk.yellow(chalk.bold(process.title))} ${chalk.yellow(chalk.bold('[-dvhs] [-p PORT] [-w PORT]'))}${os.EOL}${chalk.gray(chalk.bold('[[OPTIONS]]'))}`);
 
 if (opts.options.help) {
   getopt.showHelp();
@@ -52,7 +56,7 @@ Server({
   port: opts.options.port,
   httpPort: opts.options['http-port'],
   redirect: opts.options['redirect-port'],
-  context: (function getContextSync() {
+  context: opts.options.secure && (function getContextSync() {
     let certPath = path.join(__dirname, '..', 'certs');
     let hadToRegenerateCerts;
     if ((hadToRegenerateCerts = (!pathExists.sync(certPath) || !pathExists.sync(path.join(certPath, 'server-key.pem')) || !pathExists.sync(path.join(certPath, 'server-cert.pem'))))) {
@@ -67,5 +71,5 @@ Server({
       key: fs.readFileSync(path.join(__dirname, '..', 'certs', 'server-key.pem')),
       cert: fs.readFileSync(path.join(__dirname, '..', 'certs', 'server-cert.pem'))
     }
-  })()
+  })() || null
 }).listen();

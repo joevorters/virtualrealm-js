@@ -27,37 +27,70 @@
 
   .title {
     display: table-cell;
+    padding-left: @title-padding;
+    padding-right: @title-padding;
     vertical-align: middle;
     .desktop({
-      width: calc(~'100% - @{nav-icon-size}');
+      width: calc(~'100% - 2*@{nav-action-width} + 4*@{nav-actions-border}');
     });
     .mobile({
-      width: calc(~'100% - @{mobile-nav-icon-size}');
+      width: calc(~'100% - 2*@{mobile-nav-action-width} + 4*@{mobile-nav-actions-border}');
     });
   }
 
   .nav-actions {
     display: table-cell;
-    vertical-align: middle;
-    text-align: center;
     .desktop({
-      width: @nav-icon-size;
+      border-right: @nav-actions-border solid @nav-actions-border-color;
+      border-left: @nav-actions-border solid @nav-actions-border-color;
+      width: @nav-action-width - @nav-actions-border * 2;
     });
     .mobile({
-      width: @mobile-nav-icon-size;
+      border-left: @mobile-nav-actions-border solid @nav-actions-border-color;
+      border-right: @mobile-nav-actions-border solid @nav-actions-border-color;
+      width: @mobile-nav-action-width - @mobile-nav-actions-border * 2;
     });
-
-    i {
-      vertical-align: middle;
-      text-align: center;
-      .mobile({
-        height: @mobile-nav-icon-size;
-        font-size: @mobile-nav-icon-size;
-      });
-      .desktop({
-        height: @nav-icon-size;
-        font-size: @nav-icon-size;
-      });
+    vertical-align: middle;
+    text-align: center;
+    .nav-action-table {
+      display: table;
+      .vfill();
+      .hfill();
+      .nav-action-row {
+        display: table-row-group;
+        .nav-action {
+          display: table-cell;
+          .desktop({
+            padding-left: @nav-icon-padding;
+            padding-right: @nav-icon-padding;
+            width: @nav-icon-size;
+          });
+          .mobile({
+            width: @mobile-nav-icon-size;
+            padding-left: @mobile-nav-icon-padding;
+            padding-right: @mobile-nav-icon-padding;
+          });
+          .vfill();
+          .vcenter();
+          .transition-duration(0.2s);
+          &:hover {
+            background-color: lighten(@backdrop-color, 90%);
+            color: black;
+          }
+          i {
+            vertical-align: middle;
+            text-align: center;
+            .mobile({
+              height: @mobile-nav-icon-size;
+              font-size: @mobile-nav-icon-size;
+            });
+            .desktop({
+              height: @nav-icon-size;
+              font-size: @nav-icon-size;
+            });
+          }
+        }
+      }
     }
   }
 }

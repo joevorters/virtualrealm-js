@@ -4,10 +4,25 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <div className="nav">
-        <span className="title">Virtualrealm</span>
-        <span className="nav-actions">
-          <i className="material-icons">person</i>
-        </span>
+        <div className="nav-actions">
+          <div className="nav-action-table">
+            <div className="nav-action-row">
+              <div className="nav-action">
+                <i className="material-icons">menu</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="title">Virtualrealm</div>
+        <div className="nav-actions">
+          <div className="nav-action-table">
+            <div className="nav-action-row">
+              <div className="nav-action">
+                <i className="material-icons">person</i>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
